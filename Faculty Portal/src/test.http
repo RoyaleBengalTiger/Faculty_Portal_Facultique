@@ -1,0 +1,70 @@
+### LOGIN HOD -> HOD_TOKEN
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "hod@ftms.local",
+  "password": "password"
+}
+
+> {%
+    const b = response.body || {};
+    const t = b.token || b.accessToken || b.jwt;
+    if (t) client.global.set("HOD_TOKEN", t);
+%}
+
+### LOGIN FACULTY -> FAC_TOKEN
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "faculty@ftms.local",
+  "password": "password"
+}
+
+> {%
+    const b = response.body || {};
+    const t = b.token || b.accessToken || b.jwt;
+    if (t) client.global.set("FAC_TOKEN", t);
+%}
+
+### HOD creates a task
+POST http://localhost:8080/api/tasks
+Authorization: Bearer {{HOD_TOKEN}}
+Content-Type: application/json
+
+{
+  "title": "Prepare lab rubric",
+  "description": "Draft initial rubric and share links.",
+  "dueAt": "2025-09-24T00:00:00Z",
+  "priority": 2,
+  "assignedToUserId": 2
+}
+
+> {%
+    client.global.set("TASK_ID", response.body.id);
+%}
+
+### Faculty starts it
+PATCH http://localhost:8080/api/tasks/{{TASK_ID}}/start
+Authorization: Bearer {{FAC_TOKEN}}
+
+### Faculty submits it
+POST http://localhost:8080/api/tasks/{{TASK_ID}}/submit
+Authorization: Bearer {{FAC_TOKEN}}
+Content-Type: application/json
+
+{
+  "summary": "Implemented rubric v1; included Google Doc and GitHub PR.",
+  "links": ["https://docs.google.com/document/d/xxxx"]
+}
+
+### HOD approves
+POST http://localhost:8080/api/tasks/{{TASK_ID}}/review
+Authorization: Bearer {{HOD_TOKEN}}
+Content-Type: application/json
+
+{
+  "decision": "APPROVED",
+  "note": "Looks good."
+}

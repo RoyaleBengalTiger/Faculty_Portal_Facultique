@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Academic Faculty Portal Theme
+   Elegant navy-blue color scheme with refined accents
+   All colors in HSL format for better control */
+
+@layer base {
+  :root {
+    /* Dark theme - Professional navy base */
+    --background: 220 26% 8%;
+    --foreground: 210 40% 95%;
+    
+    /* Card colors - Subtle elevation */
+    --card: 220 24% 12%;
+    --card-foreground: 210 40% 95%;
+    
+    /* Popover colors */
+    --popover: 220 24% 12%;
+    --popover-foreground: 210 40% 95%;
+    
+    /* Primary - Professional indigo */
+    --primary: 224 76% 65%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 224 76% 70%;
+    --primary-light: 224 76% 15%;
+    
+    /* Secondary - Refined slate */
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 30% 90%;
+    
+    /* Muted tones */
+    --muted: 220 18% 14%;
+    --muted-foreground: 210 15% 65%;
+    
+    /* Accent - Elegant teal */
+    --accent: 174 72% 56%;
+    --accent-foreground: 220 26% 8%;
+    --accent-light: 174 72% 12%;
+    
+    /* Academic status colors */
+    --status-pending: 42 86% 64%;
+    --status-pending-foreground: 220 26% 8%;
+    
+    --status-in-progress: 224 76% 65%;
+    --status-in-progress-foreground: 210 40% 98%;
+    
+    --status-submitted: 264 83% 70%;
+    --status-submitted-foreground: 210 40% 98%;
+    
+    --status-completed: 142 71% 45%;
+    --status-completed-foreground: 210 40% 98%;
+    
+    --status-overdue: 0 72% 58%;
+    --status-overdue-foreground: 210 40% 98%;
+    
+    --status-rejected: 0 72% 58%;
+    --status-rejected-foreground: 210 40% 98%;
+    
+    /* Destructive */
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Borders and inputs */
+    --border: 220 20% 20%;
+    --input: 220 22% 14%;
+    --ring: 224 76% 65%;
+    
+    /* Elegant gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 76% 65%), hsl(174 72% 56%));
+    --gradient-card: linear-gradient(135deg, hsl(220 24% 12%), hsl(220 20% 16%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 8%), hsl(224 76% 15%));
+    --gradient-status: linear-gradient(135deg, hsl(var(--status-pending)), hsl(var(--status-in-progress)));
+    
+    /* Professional shadows */
+    --shadow-soft: 0 2px 8px 0 rgba(0, 0, 0, 0.6), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    --shadow-medium: 0 6px 20px -2px rgba(0, 0, 0, 0.6), 0 3px 8px -1px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 6px 15px -3px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 40px hsl(224 76% 65% / 0.3);
+    --shadow-accent: 0 0 25px hsl(174 72% 56% / 0.2);
+    
+    /* Smooth animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    --radius: 0.75rem;
+    
+    /* Sidebar - Academic professional */
+    --sidebar-background: 220 28% 7%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 224 76% 65%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 22% 14%;
+    --sidebar-accent-foreground: 210 30% 90%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 224 76% 65%;
+  }
+
+  .light {
+    /* Light theme - Clean academic white */
+    --background: 210 25% 98%;
+    --foreground: 220 45% 15%;
+    
+    /* Card colors */
+    --card: 210 25% 100%;
+    --card-foreground: 220 45% 15%;
+    
+    /* Popover colors */
+    --popover: 210 25% 100%;
+    --popover-foreground: 220 45% 15%;
+    
+    /* Primary - Professional blue */
+    --primary: 224 76% 55%;
+    --primary-foreground: 210 25% 100%;
+    --primary-hover: 224 76% 50%;
+    --primary-light: 224 76% 96%;
+    
+    /* Secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 45% 15%;
+    
+    /* Muted */
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 25% 45%;
+    
+    /* Accent - Elegant teal */
+    --accent: 174 72% 46%;
+    --accent-foreground: 210 25% 100%;
+    --accent-light: 174 72% 96%;
+    
+    /* Status colors for light theme */
+    --status-pending: 42 86% 54%;
+    --status-pending-foreground: 210 25% 100%;
+    
+    --status-in-progress: 224 76% 55%;
+    --status-in-progress-foreground: 210 25% 100%;
+    
+    --status-submitted: 264 83% 60%;
+    --status-submitted-foreground: 210 25% 100%;
+    
+    --status-completed: 142 71% 35%;
+    --status-completed-foreground: 210 25% 100%;
+    
+    --status-overdue: 0 72% 48%;
+    --status-overdue-foreground: 210 25% 100%;
+    
+    --status-rejected: 0 72% 48%;
+    --status-rejected-foreground: 210 25% 100%;
+    
+    /* Destructive */
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 210 25% 100%;
+    
+    /* Borders */
+    --border: 210 20% 88%;
+    --input: 210 20% 96%;
+    --ring: 224 76% 55%;
+    
+    /* Light gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 76% 55%), hsl(174 72% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(210 25% 100%), hsl(210 20% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 25% 98%), hsl(224 76% 96%));
+    
+    /* Light shadows */
+    --shadow-soft: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 6px 20px -2px rgba(0, 0, 0, 0.12), 0 3px 8px -1px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 15px 35px -5px rgba(0, 0, 0, 0.15), 0 6px 15px -3px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 30px hsl(224 76% 55% / 0.15);
+    --shadow-accent: 0 0 20px hsl(174 72% 46% / 0.1);
+    
+    /* Sidebar light theme */
+    --sidebar-background: 210 25% 100%;
+    --sidebar-foreground: 220 45% 15%;
+    --sidebar-primary: 224 76% 55%;
+    --sidebar-primary-foreground: 210 25% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 220 45% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 224 76% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Enhanced scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 5px;
+    transition: var(--transition-fast);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+  
+  /* Enhanced focus rings */
+  input:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-fast);
+  }
+  
+  /* Academic typography enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  
+  /* Smooth transitions for interactive elements */
+  button, 
+  [role="button"], 
+  input, 
+  textarea, 
+  select {
+    transition: var(--transition-fast);
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+  }
+  
+  /* Status badge styles */
+  .status-badge {
+    border-radius: calc(var(--radius) - 2px);
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    transition: var(--transition-fast);
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
+
+/* Component-specific enhancements */
+@layer components {
+  .nav-item {
+    position: relative;
+    transition: var(--transition-fast);
+  }
+  
+  .nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: hsl(var(--primary));
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: var(--transition-spring);
+  }
+  
+  .nav-item.active::before,
+  .nav-item:hover::before {
+    transform: scaleY(1);
+  }
+  
+  /* Enhanced button styles */
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-fast);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: var(--shadow-large);
+    transform: translateY(-1px);
+  }
+  
+  /* Professional form styling */
+  .form-input {
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-fast);
+  }
+  
+  .form-input:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-glow);
+  }
+
+  
+}
